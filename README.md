@@ -13,3 +13,11 @@ by manually entering them as well as scanning reciepts which will be stored for 
 
 <b>OCR (Optical Character Recognition):</b> Tesseract.js or consider Google Cloud Vision, AWS Textract <br>
 <b>File Storage:</b> AWS S3 <br>
+
+# Configuration
+<h3>If the project isn't working:</h3>
+  Inside the "server" directory, run: npm install <br>
+
+<h3>For database connection:</h3>
+  Create a .env file inside the "server" directory <br>
+  Add: DATABASE_URL="postgresql://..." <br>

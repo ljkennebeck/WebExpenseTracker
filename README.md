@@ -16,7 +16,9 @@ by manually entering them as well as scanning reciepts which will be stored for 
 
 # Configuration
 <h3>If the project isn't working:</h3>
-  Inside the "server" directory, run: npm install <br>
+  Inside the "server" directory, run: npm install then run: npm install express followed by npx prisma generate and finally run: npm install cors. <br>
+  Proced to exit server directory and enter client and run: npm install react react-dom <br>
+  
 
 <h3>For database connection:</h3>
   Create a .env file inside the "server" directory <br>

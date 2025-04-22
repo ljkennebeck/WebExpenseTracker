@@ -20,9 +20,8 @@ by manually entering them as well as scanning reciepts which will be stored for 
    - npm install <br>
    - npm install express <br>
    - npx prisma generate <br>
-   - npm install cors. <br>
-
-  Inside the "client" directory, run: <br>
+   - npm install cors. <br><br>
+  Inside the "server" directory, run: <br>
    - npm install react react-dom <br>
   
 <h3>For database connection:</h3>

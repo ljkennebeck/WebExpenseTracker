@@ -8,13 +8,15 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "build": "tsc",
     "prisma:generate": "prisma generate",
-    "migration:create": "prisma migrate dev --create-only",
+    "migration": "prisma migrate dev --create-only",
     "migrate": "prisma migrate deploy"
   },
   "author": "Logan Kennebeck",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.6.0",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "pg": "^8.14.1"

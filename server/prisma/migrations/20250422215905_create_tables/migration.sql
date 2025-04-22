@@ -5,6 +5,7 @@ CREATE TYPE "Role" AS ENUM ('USER', 'ADMIN');
 CREATE TABLE "users" (
     "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
     "name" TEXT,
     "role" "Role" NOT NULL DEFAULT 'USER',
 
@@ -14,7 +15,6 @@ CREATE TABLE "users" (
 -- CreateTable
 CREATE TABLE "profiles" (
     "id" SERIAL NOT NULL,
-    "bio" TEXT,
     "userId" INTEGER NOT NULL,
 
     CONSTRAINT "profiles_pkey" PRIMARY KEY ("id")
@@ -41,7 +41,7 @@ CREATE UNIQUE INDEX "profiles_userId_key" ON "profiles"("userId");
 CREATE INDEX "transactions_id_idx" ON "transactions"("id");
 
 -- AddForeignKey
-ALTER TABLE "profiles" ADD CONSTRAINT "profiles_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "profiles" ADD CONSTRAINT "profiles_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "transactions" ADD CONSTRAINT "transactions_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "transactions" ADD CONSTRAINT "transactions_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;

@@ -2,15 +2,17 @@
 import express, { Request, Response } from 'express';
 import cors from "cors";
 import userRoutes from "./routes/userRoutes";
+import transactionRoutes from "./routes/transactionRoutes"
 
 const app = express();
 const PORT: number = 8080;
 
 // Middleware
 app.use(cors());
-
+app.use(express.json());
 // Routes
 app.use('/users', userRoutes);
+app.use('/transactions', transactionRoutes)
 
 app.get('/api/home', (req: Request, res: Response) => {
   res.json({ message: 'Hello World!', people: ['Harry', 'Jack', 'Barry'] });

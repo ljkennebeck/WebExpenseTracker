@@ -16,20 +16,20 @@ datasource db {
 
 // models
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  role    Role     @default(USER)
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  password     String
+  name         String?
+  role         Role     @default(USER)
   transactions Transaction[] // many-1
-  profile Profile?
+  profile      Profile?
 
   @@map("users")
 }
 
 model Profile {
   id     Int    @id @default(autoincrement())
-  bio    String?
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int    @unique // 1-1
 
   @@map("profiles")
@@ -40,8 +40,8 @@ model Transaction {
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   title      String
-  user     User       @relation(fields: [userId], references: [id])
-  userId   Int // 1-many
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     Int // 1-many
 
   @@index([id])
   @@map("transactions")

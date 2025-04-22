@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import EntityNotFoundError from "../errors/EntityNotFoundError";
+import EntityNotFoundError from "../errors/entityNotFoundError";
 import prisma from "../prisma-client";
 
 export const listTransactions = async (req: Request, res: Response) => {
@@ -23,3 +23,39 @@ export const getTransaction = async (req: Request, res: Response) => {
 
   res.status(200).json({ transaction });
 };
+
+export const addTransaction = async (req: Request, res: Response) => {
+  const { title, userId } = req.body;
+  const newTransaction = await prisma.transaction.create({
+    data: {
+      title: title,
+      user: {
+        connect: { id: Number(userId) },
+      },
+    },
+  });
+  res.status(200).json({ newTransaction });
+};
+
+export const updateTransaction = async (req: Request, res: Response) => {
+  const { id, title } = req.body;
+  const updateTransaction = await prisma.transaction.update({
+    where: {
+      id: id,
+    },
+    data: {
+      title: title
+    },
+  });
+  res.status(200).json({ updateTransaction });
+};
+
+export const deleteTransaction = async (req: Request, res: Response) => {
+  const { id } = req.body;
+  const deletedTransaction = await prisma.transaction.delete({
+    where: {
+      id:id
+    },
+  });
+  res.status(200).json({ deletedTransaction });
+}

@@ -35,7 +35,7 @@ export const getUser = async (req: Request, res: Response) => {
 };
 
 export const addUser = async (req: Request, res: Response) => {
-  const { email, password, name, transactions } = req.body;
+  const { email, password, name } = req.body;
   const hash = await bcrypt.hash(password, 10);
   const newUser = await prisma.user.create({
     data: {

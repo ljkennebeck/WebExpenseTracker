@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/?(.*)",
+      "dest": "src/index.ts"
+    },
+    {
+      "src": "/users/?(.*)",
+      "dest": "src/index.ts"
+    },
+    {
+      "src": "/transactions/?(.*)",
+      "dest": "src/index.ts"
+    },
+    {
+      "src": "/home",
+      "dest": "src/index.ts"
+    },
+    {
+      "src": "/",
+      "dest": "src/index.ts"
+    }
+  ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run prisma:generate && npm run build",
+  "env": {
+    "DATABASE_URL": "postgresql://postgres:tPaPqQzsXkAdQeTiqiCjtLCgRpoOgKPF@yamanote.proxy.rlwy.net:50234/railway"
+  }
+}

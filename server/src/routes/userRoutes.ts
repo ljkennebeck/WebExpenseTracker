@@ -4,7 +4,7 @@ import { listUsers, listUserTransactions, addUser, updateUser, deleteUser } from
 
 const router = express.Router();
 
-router.get('/', listUsers);
+router.get('', listUsers);
 router.get('/transactions/:id', listUserTransactions);
 router.get('/add', addUser)
 router.get('/edit', updateUser)

@@ -1,5 +1,5 @@
 import { ErrorCode } from "./errorTypes";
-import CustomError from "./CustomError";
+import customError from "./customError";
 
-class EntityNotFoundError extends CustomError<ErrorCode> {}
+class EntityNotFoundError extends customError<ErrorCode> {}
 export default EntityNotFoundError;

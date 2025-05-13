@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "build": "tsc",
-    "prisma:generate": "prisma generate",
+    "vercel-build": "npm run prisma:generate && npm run build",
+    "build": "npm run prisma:generate && tsc",
+    "prisma:generate": "echo Generating Prisma client... && prisma generate",
     "migration": "prisma migrate dev --create-only",
     "migrate": "prisma migrate deploy"
   },
@@ -20,14 +21,14 @@
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "pg": "^8.14.1"
+    "pg": "^8.14.1",
+    "prisma": "^6.6.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
     "nodemon": "^3.1.9",
-    "prisma": "^6.6.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   },

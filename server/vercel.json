@@ -28,8 +28,6 @@
       "dest": "src/index.ts"
     }
   ],
-  "installCommand": "npm install",
-  "buildCommand": "npm run prisma:generate && npm run build",
   "env": {
     "DATABASE_URL": "postgresql://postgres:tPaPqQzsXkAdQeTiqiCjtLCgRpoOgKPF@yamanote.proxy.rlwy.net:50234/railway"
   }

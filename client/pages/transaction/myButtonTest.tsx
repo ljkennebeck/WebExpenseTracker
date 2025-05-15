@@ -33,14 +33,14 @@ export default function MyButtonTest() {
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
-               <div>
-        <input>
-          type="file"
-          id="enviorment"
-          capture="user"
-          accept="image/*"
-        </input>
-      </div>
+                 <div>
+         <input>
+           type="file"
+           id="enviorment"
+           capture="user"
+           accept="image/*"
+         </input>
+       </div>
       
     </div>
     

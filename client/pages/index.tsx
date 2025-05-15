@@ -28,14 +28,7 @@ function Index() {
           </div>
         ))
       }
-      <div>
-        <input>
-          type="file"
-          id="enviorment"
-          capture="user"
-          accept="image/*"
-        </input>
-      </div>
+
     </div>
   
     

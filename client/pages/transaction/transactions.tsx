@@ -10,14 +10,7 @@ export default function transactions() {
         <h1 className="text-2xl font-bold">OCR Demo with Tesseract</h1>
         <OCRReader />
       </main>
-            <div>
-        <input>
-          type="file"
-          id="enviorment"
-          capture="user"
-          accept="image/*"
-        </input>
-      </div>
+     
     </div>
   )
 }

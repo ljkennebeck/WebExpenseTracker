@@ -33,14 +33,17 @@ export default function MyButtonTest() {
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
-     <div>
-        <input
-          type="file"
-          id="environment"
-          capture="user"
-          accept="image/*"
-        />
-      </div>
+<div>
+  <input
+    type="file"
+    id="cameraInput"
+    accept="image/*"
+    capture="user"
+  />
+  <label htmlFor="cameraInput">
+    <Button variant="outline">Photo</Button>
+  </label>
+</div>
       
     </div>
     

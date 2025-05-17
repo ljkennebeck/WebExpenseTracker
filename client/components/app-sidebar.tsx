@@ -3,9 +3,7 @@ import {
   IconCamera,
   IconChartBar,
   IconCirclePlus,
-  IconCirclePlusFilled,
   IconDashboard,
-  IconDashboardFilled,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
@@ -13,7 +11,6 @@ import {
   IconFolder,
   IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
   IconReport,
   IconSearch,
   IconSettings,
@@ -33,12 +30,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
 
 const data = {
   user: {
-    name: "shadcn",
+    name: "User",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/images/user-avatar.png",
   },
   navMain: [
     {
@@ -161,10 +159,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="/">
+              <Link href="/">
                 <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">Expense Tracker</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export function SiteHeader() {
   const pathName = usePathname();
-  let rawPath = pathName
+  const rawPath = pathName
     ?.split("/")
     .filter(Boolean)
   

@@ -1,7 +1,6 @@
 "use client";
-import { IconDashboard, IconListDetails, IconMail, type Icon } from "@tabler/icons-react"
+import { type Icon } from "@tabler/icons-react"
 
-import { Button } from "@/components/ui/button"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -10,6 +9,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export function NavMain({
   items,
@@ -20,6 +20,7 @@ export function NavMain({
     icon?: Icon
   }[]
 }) {
+  const pathName = usePathname();
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
@@ -44,7 +45,6 @@ export function NavMain({
         </SidebarMenu> */}
         <SidebarMenu>
           {items.map((item) => {
-            const pathName = usePathname();
             const rawPath = pathName
               ?.split("/")
               .filter(Boolean)
@@ -61,10 +61,10 @@ export function NavMain({
             return(
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild tooltip={item.title} variant={currentPath === itemTitle ? "selected":"default"}>
-                <a href={item.url}>
+                <Link href={item.url}>
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             )

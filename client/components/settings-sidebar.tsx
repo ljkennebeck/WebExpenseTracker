@@ -25,27 +25,33 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { usePathname } from "next/navigation"
 
 const data = {
     nav: [
-        { name: "Notifications", link: "profile", icon: Bell },
+        { name: "Notifications", link: "", icon: Bell },
         { name: "Profile", link: "profile", icon: Home },
         { name: "Account", link: "account", icon: Menu },
-        { name: "Appearance", link: "profile", icon: Paintbrush },
-        { name: "Messages & media", link: "profile", icon: MessageCircle },
-        { name: "Language & region", link: "profile", icon: Globe },
-        { name: "Accessibility", link: "profile", icon: Keyboard },
-        { name: "Mark as read", link: "profile", icon: Check },
-        { name: "Audio & video", link: "profile", icon: Video },
-        { name: "Connected accounts", link: "profile", icon: Link },
-        { name: "Privacy & visibility", link: "profile", icon: Lock },
-        { name: "Advanced", link: "profile", icon: Settings },
+        { name: "Appearance", link: "", icon: Paintbrush },
+        { name: "Messages & media", link: "", icon: MessageCircle },
+        { name: "Language & region", link: "", icon: Globe },
+        { name: "Accessibility", link: "", icon: Keyboard },
+        { name: "Mark as read", link: "", icon: Check },
+        { name: "Audio & video", link: "", icon: Video },
+        { name: "Connected accounts", link: "", icon: Link },
+        { name: "Privacy & visibility", link: "", icon: Lock },
+        { name: "Advanced", link: "", icon: Settings },
     ],
 }
 
 export function SettingsSidebar() {
-    const [open, setOpen] = React.useState(true)
-    const [active, setActive] = React.useState("Home")
+    const pathName = usePathname()
+    const currentPath = pathName
+        ?.split("/")
+        .filter(Boolean)
+        .pop()
+        ?.replace(/\s+/g, "")
+        .toLowerCase();
 
     return (
         <div>
@@ -58,7 +64,7 @@ export function SettingsSidebar() {
                                 <SidebarMenuItem key={item.name}>
                                     <SidebarMenuButton
                                         asChild
-                                        isActive={item.name === active}
+                                        isActive={currentPath === item.link}
                                     >
                                         <a href={`/settings/${item.link}`}>
                                             <item.icon />

@@ -2,7 +2,10 @@ import * as React from "react"
 import {
   IconCamera,
   IconChartBar,
+  IconCirclePlus,
   IconCirclePlusFilled,
+  IconDashboard,
+  IconDashboardFilled,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
@@ -40,13 +43,13 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
-      icon: IconCirclePlusFilled,
+      url: "/",
+      icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: IconListDetails,
+      title: "New Transaction",
+      url: "/transaction/newTransaction",
+      icon: IconCirclePlus,
     },
     {
       title: "Analytics",
@@ -158,7 +161,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <a href="/">
                 <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">Expense Tracker</span>
               </a>

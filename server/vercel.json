@@ -27,8 +27,5 @@
       "src": "/",
       "dest": "src/index.ts"
     }
-  ],
-  "env": {
-    "DATABASE_URL": "postgresql://postgres:tPaPqQzsXkAdQeTiqiCjtLCgRpoOgKPF@yamanote.proxy.rlwy.net:50234/railway"
-  }
+  ]
 }
